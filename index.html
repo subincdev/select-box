@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <article>
+      <h2 class="hidden">최애 프로그래밍 언어</h2>
+      <button class="btn-select">최애 프로그래밍 언어</button>
+      <ul class="list-member">
+        <li><button type="button">Python</button></li>
+        <li><button type="button">Java</button></li>
+        <li><button type="button">JavaScript</button></li>
+        <li><button type="button">C#</button></li>
+        <li><button type="button">C/C++</button></li>
+      </ul>
+    </article>
+    <script>
+      //btn-select를 클릭하면 list-member on 클래스 toggle로 달기
+      const btn = document.querySelector(".btn-select");
+      const langList = document.querySelector(".list-member");
+      btn.addEventListener("click", () => {
+        langList.classList.toggle("on");
+        btn.classList.add("on");
+      });
+      // btn-select에 textContent 삭제하고 li textContent 를 넣기
+      langList.addEventListener("click", () => {
+        btn.textContent = event.target.textContent;
+        langList.classList.remove("on");
+        btn.classList.remove("on");
+      });
+    </script>
+  </body>
+</html>
